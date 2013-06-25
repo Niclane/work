@@ -1,24 +1,29 @@
 <?php
-require_once "blocks/bd.php";
-//connecting necessary language
-if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") {
-  $result=mysql_query("SELECT title,header,text_main,footer FROM ua WHERE page='index'",$db);
-  $myrow=mysql_fetch_array($result);
-}
-
-if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") {
-  $result=mysql_query("SELECT title,header,text_main,footer FROM en WHERE page='index'",$db);
-  $myrow=mysql_fetch_array($result);
-} 
-
-if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
-  $result=mysql_query("SELECT title,header,text_main,footer FROM ru WHERE page='index'",$db);
-  $myrow=mysql_fetch_array($result);
-}
-
-
-//getting a variable that contain number of page
-if (!isset($_GET['page'])) $page=1; else $page=$_GET['page'];
+  require_once "blocks/bd.php";
+  
+  // Connecting necessary language.
+  if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") {
+    $result=mysql_query("SELECT title,header,text_main,footer FROM ua WHERE page='index'",$db);
+    $myrow=mysql_fetch_array($result);
+  }
+  
+  if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") {
+    $result=mysql_query("SELECT title,header,text_main,footer FROM en WHERE page='index'",$db);
+    $myrow=mysql_fetch_array($result);
+  } 
+  
+  if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
+    $result=mysql_query("SELECT title,header,text_main,footer FROM ru WHERE page='index'",$db);
+    $myrow=mysql_fetch_array($result);
+  }
+  
+  // Getting a variable that contain number of page.
+  if (!isset($_GET['page'])) {
+    $page=1;
+  }
+  else {
+    $page=$_GET['page'];
+  }
 ?>
 
 
