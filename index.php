@@ -1,6 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
 require_once "blocks/bd.php";
 //connecting necessary language
 if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") {
