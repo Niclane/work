@@ -1,0 +1,31 @@
+/* CSS Document */
+body {background-image: url("../img/bg.gif");}
+.border_reg {margin-top:40px;}
+.header {border-bottom:1px solid #000000;}
+.left {padding-top:20px; background-color:#FFFFFF; border-top:1px solid #000000; border-bottom:1px solid #000000; padding-bottom:10px;}
+.lefttd {border-right:1px solid #000000; padding-top:20px; background-color:#a0dffd;}
+
+.news {border:1px solid #cccccc; width:95%; background-color:#FFFFFF; margin-top:10px; margin-bottom:10px;}
+.news_title {background-color:#a0dffd; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px;}
+
+.news_name {font-weight:bold; margin-top:7px; margin-bottom:7px; color:#000066;}
+.news_adds {font-size:13px; margin-top:7px; margin-bottom:7px; color:#424242;}
+.news_view {
+font-size:11px;
+color:#37A6AE;
+}
+
+.table_logged {background-color:#FFFFFF; margin-top:10px; margin-bottom:20px; border-top:1px solid #000000; border-bottom:1px solid #000000; padding-bottom:10px;}
+.td {padding-bottom:20px;}
+a:link {color:black;}
+a:visited {color:black;}
+a:hover {color:green; text-decoration:none; text-transform:uppercase; letter-spacing:2px; background-color:yellow;}
+a:active {color:orange; text-decoration:none;}
+p {text-indent:30px;}
+#USA {position:absolute; top:130px; right:36%;}
+#UA {position:absolute; top:130px; right:44%;}
+#RU {position:absolute; top:130px; right:40%;}
+#footer {margin-top:0px;}
+h3 {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:18px;}
+h2 {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:18px;}
+p {font-family:Verdana, Arial, Helvetica, sans-serif; font-size:14px;}
