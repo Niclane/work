@@ -20,7 +20,7 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title><?php echo $myrow['title']; ?></title>
 <link rel="stylesheet" type="text/css" href="style/style.css" />
 </head>
@@ -45,9 +45,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
           	<?php 
 				if (isset($_POST['surname'])) {$surname=$_POST['surname']; $surname=trim($surname);
 					if ($surname=="") {
-							if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "<p style='color:#FF0000; font-size:18px;'>Вибачте, але ви не ввели ваше прізвище, поверніться на попередню сторінку і заповніть всі поля</p><input name='back' type='button' value='Повернутись на попередню сторінку' onclick='javascript:self.back();'>";
+							if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "<p style='color:#FF0000; font-size:18px;'>Г‚ГЁГЎГ Г·ГІГҐ, Г Г«ГҐ ГўГЁ Г­ГҐ ГўГўГҐГ«ГЁ ГўГ ГёГҐ ГЇГ°ВіГ§ГўГЁГ№ГҐ, ГЇГ®ГўГҐГ°Г­ВіГІГјГ±Гї Г­Г  ГЇГ®ГЇГҐГ°ГҐГ¤Г­Гѕ Г±ГІГ®Г°ВіГ­ГЄГі Ві Г§Г ГЇГ®ГўГ­ВіГІГј ГўГ±Ві ГЇГ®Г«Гї</p><input name='back' type='button' value='ГЏГ®ГўГҐГ°Г­ГіГІГЁГ±Гј Г­Г  ГЇГ®ГЇГҐГ°ГҐГ¤Г­Гѕ Г±ГІГ®Г°ВіГ­ГЄГі' onclick='javascript:self.back();'>";
 							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "<p style='color:#FF0000; font-size:18px;'>Sorry, but you have not entered your surname, go back to the previous page and fill in all fields</p><input name='back' type='button' value='Back to previous page' onclick='javascript:self.back();'>";
-							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Извините, но вы не ввели вашу фамилию, вернитесь на предыдущую страницу и заполните все поля</p><input name='back' type='button' value='Вернуться на предыдущую страницу' onclick='javascript:self.back();'>";
+							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Г€Г§ГўГЁГ­ГЁГІГҐ, Г­Г® ГўГ» Г­ГҐ ГўГўГҐГ«ГЁ ГўГ ГёГі ГґГ Г¬ГЁГ«ГЁГѕ, ГўГҐГ°Г­ГЁГІГҐГ±Гј Г­Г  ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі ГЁ Г§Г ГЇГ®Г«Г­ГЁГІГҐ ГўГ±ГҐ ГЇГ®Г«Гї</p><input name='back' type='button' value='Г‚ГҐГ°Г­ГіГІГјГ±Гї Г­Г  ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі' onclick='javascript:self.back();'>";
 					 exit();
 					}
 					$surname=htmlspecialchars($surname);
@@ -55,9 +55,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
 				
 				if (isset($_POST['name'])) {$name=$_POST['name']; $name=trim($name);
 					if ($name=="") {
-							if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "<p style='color:#FF0000; font-size:18px;'>Вибачте, але ви не ввели ваше ім&apos;я, поверніться на попередню сторінку і заповніть всі поля</p><input name='back' type='button' value='Повернутись на попередню сторінку' onclick='javascript:self.back();'>";
+							if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "<p style='color:#FF0000; font-size:18px;'>Г‚ГЁГЎГ Г·ГІГҐ, Г Г«ГҐ ГўГЁ Г­ГҐ ГўГўГҐГ«ГЁ ГўГ ГёГҐ ВіГ¬&apos;Гї, ГЇГ®ГўГҐГ°Г­ВіГІГјГ±Гї Г­Г  ГЇГ®ГЇГҐГ°ГҐГ¤Г­Гѕ Г±ГІГ®Г°ВіГ­ГЄГі Ві Г§Г ГЇГ®ГўГ­ВіГІГј ГўГ±Ві ГЇГ®Г«Гї</p><input name='back' type='button' value='ГЏГ®ГўГҐГ°Г­ГіГІГЁГ±Гј Г­Г  ГЇГ®ГЇГҐГ°ГҐГ¤Г­Гѕ Г±ГІГ®Г°ВіГ­ГЄГі' onclick='javascript:self.back();'>";
 							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "<p style='color:#FF0000; font-size:18px;'>Sorry, but you have not entered your name, go back to the previous page and fill in all fields</p><input name='back' type='button' value='Back to previous page' onclick='javascript:self.back();'>";
-							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Извините, но вы не ввели ваше имя, вернитесь на предыдущую страницу и заполните все поля</p><input name='back' type='button' value='Вернуться на предыдущую страницу' onclick='javascript:self.back();'>";
+							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Г€Г§ГўГЁГ­ГЁГІГҐ, Г­Г® ГўГ» Г­ГҐ ГўГўГҐГ«ГЁ ГўГ ГёГҐ ГЁГ¬Гї, ГўГҐГ°Г­ГЁГІГҐГ±Гј Г­Г  ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі ГЁ Г§Г ГЇГ®Г«Г­ГЁГІГҐ ГўГ±ГҐ ГЇГ®Г«Гї</p><input name='back' type='button' value='Г‚ГҐГ°Г­ГіГІГјГ±Гї Г­Г  ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі' onclick='javascript:self.back();'>";
 					 exit();
 					}
 					$name=htmlspecialchars($name);
@@ -65,9 +65,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
 				
 				if (isset($_POST['lastname'])) {$lastname=$_POST['lastname']; $lastname=trim($lastname);
 					if ($lastname=="") {
-							if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "<p style='color:#FF0000; font-size:18px;'>Вибачте, але ви не ввели по-батькові, поверніться на попередню сторінку і заповніть всі поля</p><input name='back' type='button' value='Повернутись на попередню сторінку' onclick='javascript:self.back();'>";
+							if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "<p style='color:#FF0000; font-size:18px;'>Г‚ГЁГЎГ Г·ГІГҐ, Г Г«ГҐ ГўГЁ Г­ГҐ ГўГўГҐГ«ГЁ ГЇГ®-ГЎГ ГІГјГЄГ®ГўВі, ГЇГ®ГўГҐГ°Г­ВіГІГјГ±Гї Г­Г  ГЇГ®ГЇГҐГ°ГҐГ¤Г­Гѕ Г±ГІГ®Г°ВіГ­ГЄГі Ві Г§Г ГЇГ®ГўГ­ВіГІГј ГўГ±Ві ГЇГ®Г«Гї</p><input name='back' type='button' value='ГЏГ®ГўГҐГ°Г­ГіГІГЁГ±Гј Г­Г  ГЇГ®ГЇГҐГ°ГҐГ¤Г­Гѕ Г±ГІГ®Г°ВіГ­ГЄГі' onclick='javascript:self.back();'>";
 							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "<p style='color:#FF0000; font-size:18px;'>Sorry, but you have not entered your middle name, go back to the previous page and fill in all fields</p><input name='back' type='button' value='Back to previous page' onclick='javascript:self.back();'>";
-							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Извините, но вы не ввели ваше отчество, вернитесь на предыдущую страницу и заполните все поля</p><input name='back' type='button' value='Вернуться на предыдущую страницу' onclick='javascript:self.back();'>";
+							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Г€Г§ГўГЁГ­ГЁГІГҐ, Г­Г® ГўГ» Г­ГҐ ГўГўГҐГ«ГЁ ГўГ ГёГҐ Г®ГІГ·ГҐГ±ГІГўГ®, ГўГҐГ°Г­ГЁГІГҐГ±Гј Г­Г  ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі ГЁ Г§Г ГЇГ®Г«Г­ГЁГІГҐ ГўГ±ГҐ ГЇГ®Г«Гї</p><input name='back' type='button' value='Г‚ГҐГ°Г­ГіГІГјГ±Гї Г­Г  ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі' onclick='javascript:self.back();'>";
 					 exit();
 					}
 					$lastname=htmlspecialchars($lastname);
@@ -75,9 +75,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
 				
 				if (isset($_POST['mob'])) {$mob=$_POST['mob'];
 					if ($mob=="") {
-							if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "<p style='color:#FF0000; font-size:18px;'>Вибачте, але ви не ввели номера телефону, поверніться на попередню сторінку і заповніть всі поля</p><input name='back' type='button' value='Повернутись на попередню сторінку' onclick='javascript:self.back();'>";
+							if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "<p style='color:#FF0000; font-size:18px;'>Г‚ГЁГЎГ Г·ГІГҐ, Г Г«ГҐ ГўГЁ Г­ГҐ ГўГўГҐГ«ГЁ Г­Г®Г¬ГҐГ°Г  ГІГҐГ«ГҐГґГ®Г­Гі, ГЇГ®ГўГҐГ°Г­ВіГІГјГ±Гї Г­Г  ГЇГ®ГЇГҐГ°ГҐГ¤Г­Гѕ Г±ГІГ®Г°ВіГ­ГЄГі Ві Г§Г ГЇГ®ГўГ­ВіГІГј ГўГ±Ві ГЇГ®Г«Гї</p><input name='back' type='button' value='ГЏГ®ГўГҐГ°Г­ГіГІГЁГ±Гј Г­Г  ГЇГ®ГЇГҐГ°ГҐГ¤Г­Гѕ Г±ГІГ®Г°ВіГ­ГЄГі' onclick='javascript:self.back();'>";
 							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "<p style='color:#FF0000; font-size:18px;'>Sorry, but you have not entered your mobile number, go back to the previous page and fill in all fields</p><input name='back' type='button' value='Back to previous page' onclick='javascript:self.back();'>";
-							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Извините, но вы не ввели ваш номер телефона, вернитесь на предыдущую страницу и заполните все поля</p><input name='back' type='button' value='Вернуться на предыдущую страницу' onclick='javascript:self.back();'>";
+							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Г€Г§ГўГЁГ­ГЁГІГҐ, Г­Г® ГўГ» Г­ГҐ ГўГўГҐГ«ГЁ ГўГ Гё Г­Г®Г¬ГҐГ° ГІГҐГ«ГҐГґГ®Г­Г , ГўГҐГ°Г­ГЁГІГҐГ±Гј Г­Г  ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі ГЁ Г§Г ГЇГ®Г«Г­ГЁГІГҐ ГўГ±ГҐ ГЇГ®Г«Гї</p><input name='back' type='button' value='Г‚ГҐГ°Г­ГіГІГјГ±Гї Г­Г  ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі' onclick='javascript:self.back();'>";
 					 exit();
 					}
 					$mob=htmlspecialchars($mob);
@@ -96,9 +96,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
 				
 				
 					if ($mail=="" || $errMail==0) {
-							if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "<p style='color:#FF0000; font-size:18px;'>Вибачте, але ви не ввели E-mail, поверніться на попередню сторінку і заповніть всі поля</p><input name='back' type='button' value='Повернутись на попередню сторінку' onclick='javascript:self.back();'>";
+							if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "<p style='color:#FF0000; font-size:18px;'>Г‚ГЁГЎГ Г·ГІГҐ, Г Г«ГҐ ГўГЁ Г­ГҐ ГўГўГҐГ«ГЁ E-mail, ГЇГ®ГўГҐГ°Г­ВіГІГјГ±Гї Г­Г  ГЇГ®ГЇГҐГ°ГҐГ¤Г­Гѕ Г±ГІГ®Г°ВіГ­ГЄГі Ві Г§Г ГЇГ®ГўГ­ВіГІГј ГўГ±Ві ГЇГ®Г«Гї</p><input name='back' type='button' value='ГЏГ®ГўГҐГ°Г­ГіГІГЁГ±Гј Г­Г  ГЇГ®ГЇГҐГ°ГҐГ¤Г­Гѕ Г±ГІГ®Г°ВіГ­ГЄГі' onclick='javascript:self.back();'>";
 							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "<p style='color:#FF0000; font-size:18px;'>Sorry, but you have not entered your E-mail, go back to the previous page and fill in all fields</p><input name='back' type='button' value='Back to previous page' onclick='javascript:self.back();'>";
-							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Извините, но вы не ввели ваш E-mail, вернитесь на предыдущую страницу и заполните все поля</p><input name='back' type='button' value='Вернуться на предыдущую страницу' onclick='javascript:self.back();'>";
+							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Г€Г§ГўГЁГ­ГЁГІГҐ, Г­Г® ГўГ» Г­ГҐ ГўГўГҐГ«ГЁ ГўГ Гё E-mail, ГўГҐГ°Г­ГЁГІГҐГ±Гј Г­Г  ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі ГЁ Г§Г ГЇГ®Г«Г­ГЁГІГҐ ГўГ±ГҐ ГЇГ®Г«Гї</p><input name='back' type='button' value='Г‚ГҐГ°Г­ГіГІГјГ±Гї Г­Г  ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі' onclick='javascript:self.back();'>";
 					 exit();
 					}
 					$mail=htmlspecialchars($mail);
@@ -106,9 +106,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
 				
 				if (isset($_POST['login'])) {$login=$_POST['login']; $login=trim($login);
 					if ($login=="") {
-							if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "<p style='color:#FF0000; font-size:18px;'>Вибачте, але ви не ввели логін, поверніться на попередню сторінку і заповніть всі поля</p><input name='back' type='button' value='Повернутись на попередню сторінку' onclick='javascript:self.back();'>";
+							if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "<p style='color:#FF0000; font-size:18px;'>Г‚ГЁГЎГ Г·ГІГҐ, Г Г«ГҐ ГўГЁ Г­ГҐ ГўГўГҐГ«ГЁ Г«Г®ГЈВіГ­, ГЇГ®ГўГҐГ°Г­ВіГІГјГ±Гї Г­Г  ГЇГ®ГЇГҐГ°ГҐГ¤Г­Гѕ Г±ГІГ®Г°ВіГ­ГЄГі Ві Г§Г ГЇГ®ГўГ­ВіГІГј ГўГ±Ві ГЇГ®Г«Гї</p><input name='back' type='button' value='ГЏГ®ГўГҐГ°Г­ГіГІГЁГ±Гј Г­Г  ГЇГ®ГЇГҐГ°ГҐГ¤Г­Гѕ Г±ГІГ®Г°ВіГ­ГЄГі' onclick='javascript:self.back();'>";
 							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "<p style='color:#FF0000; font-size:18px;'>Sorry, but you have not entered your login, go back to the previous page and fill in all fields</p><input name='back' type='button' value='Back to previous page' onclick='javascript:self.back();'>";
-							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Извините, но вы не ввели ваш логин, вернитесь на предыдущую страницу и заполните все поля</p><input name='back' type='button' value='Вернуться на предыдущую страницу' onclick='javascript:self.back();'>";
+							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Г€Г§ГўГЁГ­ГЁГІГҐ, Г­Г® ГўГ» Г­ГҐ ГўГўГҐГ«ГЁ ГўГ Гё Г«Г®ГЈГЁГ­, ГўГҐГ°Г­ГЁГІГҐГ±Гј Г­Г  ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі ГЁ Г§Г ГЇГ®Г«Г­ГЁГІГҐ ГўГ±ГҐ ГЇГ®Г«Гї</p><input name='back' type='button' value='Г‚ГҐГ°Г­ГіГІГјГ±Гї Г­Г  ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі' onclick='javascript:self.back();'>";
 					 exit();
 					}
 					$login=htmlspecialchars($login);
@@ -116,9 +116,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
 				
 				if (isset($_POST['pass1']) and isset($_POST['pass2'])) {$pass1=$_POST['pass1'];	$pass2=$_POST['pass2'];
 					if ($pass1!=$pass2) {
-							if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "<p style='color:#FF0000; font-size:18px;'>Вибачте, але ви неправильно ввели пароль, поверніться на попередню сторінку і заповніть всі поля</p><input name='back' type='button' value='Повернутись на попередню сторінку' onclick='javascript:self.back();'>";
+							if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "<p style='color:#FF0000; font-size:18px;'>Г‚ГЁГЎГ Г·ГІГҐ, Г Г«ГҐ ГўГЁ Г­ГҐГЇГ°Г ГўГЁГ«ГјГ­Г® ГўГўГҐГ«ГЁ ГЇГ Г°Г®Г«Гј, ГЇГ®ГўГҐГ°Г­ВіГІГјГ±Гї Г­Г  ГЇГ®ГЇГҐГ°ГҐГ¤Г­Гѕ Г±ГІГ®Г°ВіГ­ГЄГі Ві Г§Г ГЇГ®ГўГ­ВіГІГј ГўГ±Ві ГЇГ®Г«Гї</p><input name='back' type='button' value='ГЏГ®ГўГҐГ°Г­ГіГІГЁГ±Гј Г­Г  ГЇГ®ГЇГҐГ°ГҐГ¤Г­Гѕ Г±ГІГ®Г°ВіГ­ГЄГі' onclick='javascript:self.back();'>";
 							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "<p style='color:#FF0000; font-size:18px;'>Sorry, you entered an incorrect password, go back to the previous page and fill in all fields</p><input name='back' type='button' value='Back to previous page' onclick='javascript:self.back();'>";
-							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Извините, но вы неправильно ввели ваш пароль, вернитесь на предыдущую страницу и заполните все поля</p><input name='back' type='button' value='Вернуться на предыдущую страницу' onclick='javascript:self.back();'>";
+							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Г€Г§ГўГЁГ­ГЁГІГҐ, Г­Г® ГўГ» Г­ГҐГЇГ°Г ГўГЁГ«ГјГ­Г® ГўГўГҐГ«ГЁ ГўГ Гё ГЇГ Г°Г®Г«Гј, ГўГҐГ°Г­ГЁГІГҐГ±Гј Г­Г  ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі ГЁ Г§Г ГЇГ®Г«Г­ГЁГІГҐ ГўГ±ГҐ ГЇГ®Г«Гї</p><input name='back' type='button' value='Г‚ГҐГ°Г­ГіГІГјГ±Гї Г­Г  ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі' onclick='javascript:self.back();'>";
 					 exit();
 					}
 					$pass=htmlspecialchars($pass1);
@@ -129,22 +129,22 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
 				$result=mysql_query("SELECT login FROM users",$db);
 				while($myrow=mysql_fetch_array($result)) {
 					if ($login==$myrow['login']) {
-							if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "<p style='color:#FF0000; font-size:18px;'>Вибачте, але користувач з таким логіном вже існує, поверніться на попередню сторінку і заповніть всі поля</p><input name='back' type='button' value='Повернутись на попередню сторінку' onclick='javascript:self.back();'>";
+							if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "<p style='color:#FF0000; font-size:18px;'>Г‚ГЁГЎГ Г·ГІГҐ, Г Г«ГҐ ГЄГ®Г°ГЁГ±ГІГіГўГ Г· Г§ ГІГ ГЄГЁГ¬ Г«Г®ГЈВіГ­Г®Г¬ ГўГ¦ГҐ ВіГ±Г­ГіВє, ГЇГ®ГўГҐГ°Г­ВіГІГјГ±Гї Г­Г  ГЇГ®ГЇГҐГ°ГҐГ¤Г­Гѕ Г±ГІГ®Г°ВіГ­ГЄГі Ві Г§Г ГЇГ®ГўГ­ВіГІГј ГўГ±Ві ГЇГ®Г«Гї</p><input name='back' type='button' value='ГЏГ®ГўГҐГ°Г­ГіГІГЁГ±Гј Г­Г  ГЇГ®ГЇГҐГ°ГҐГ¤Г­Гѕ Г±ГІГ®Г°ВіГ­ГЄГі' onclick='javascript:self.back();'>";
 							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "<p style='color:#FF0000; font-size:18px;'>Sorry, a user with this login already exists, go back to the previous page and fill in all fields</p><input name='back' type='button' value='Back to previous page' onclick='javascript:self.back();'>";
-							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Извините, но пользователь с таким логином уже существует, вернитесь на предыдущую страницу и заполните все поля</p><input name='back' type='button' value='Вернуться на предыдущую страницу' onclick='javascript:self.back();'>";
+							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Г€Г§ГўГЁГ­ГЁГІГҐ, Г­Г® ГЇГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гј Г± ГІГ ГЄГЁГ¬ Г«Г®ГЈГЁГ­Г®Г¬ ГіГ¦ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ, ГўГҐГ°Г­ГЁГІГҐГ±Гј Г­Г  ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі ГЁ Г§Г ГЇГ®Г«Г­ГЁГІГҐ ГўГ±ГҐ ГЇГ®Г«Гї</p><input name='back' type='button' value='Г‚ГҐГ°Г­ГіГІГјГ±Гї Г­Г  ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі' onclick='javascript:self.back();'>";
 					 exit();}
 				}
 				$insert=mysql_query("INSERT INTO users (surname,name,lastname,mob,mail,login,pass) VALUES ('$surname','$name','$lastname','$mob','$mail','$login','$pass')");
 				if ($insert){
-						if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Ви успішно зареєструвалися<br><a align='center' href='index.php'>Повернутися на головну сторінку</a>";
+						if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Г‚ГЁ ГіГ±ГЇВіГёГ­Г® Г§Г Г°ГҐВєГ±ГІГ°ГіГўГ Г«ГЁГ±Гї<br><a align='center' href='index.php'>ГЏГ®ГўГҐГ°Г­ГіГІГЁГ±Гї Г­Г  ГЈГ®Г«Г®ГўГ­Гі Г±ГІГ®Г°ВіГ­ГЄГі</a>";
 						if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "You have successfully registered<br><a align='center' href='index.php'>Back to main page</a>";
-						if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Вы успешно зарегистрировались<br><a align='center' href='index.php'>Вернуться на главную страницу</a>";
+						if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Г‚Г» ГіГ±ГЇГҐГёГ­Г® Г§Г Г°ГҐГЈГЁГ±ГІГ°ГЁГ°Г®ГўГ Г«ГЁГ±Гј<br><a align='center' href='index.php'>Г‚ГҐГ°Г­ГіГІГјГ±Гї Г­Г  ГЈГ«Г ГўГ­ГіГѕ Г±ГІГ°Г Г­ГЁГ¶Гі</a>";
 				
 				} 
 				else {
-					if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Вибачте, реєстрація невдала, спробуйте ще раз: <a href='registration.php'>Повернутися на сторінку реєстрації</a>";
+					if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Г‚ГЁГЎГ Г·ГІГҐ, Г°ГҐВєГ±ГІГ°Г Г¶ВіГї Г­ГҐГўГ¤Г Г«Г , Г±ГЇГ°Г®ГЎГіГ©ГІГҐ Г№ГҐ Г°Г Г§: <a href='registration.php'>ГЏГ®ГўГҐГ°Г­ГіГІГЁГ±Гї Г­Г  Г±ГІГ®Г°ВіГ­ГЄГі Г°ГҐВєГ±ГІГ°Г Г¶ВіВї</a>";
 					if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "Sorry, registration failed, please try again: <a href='registration.php'>Back to register page</a>";
-					if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Извините, регистрация неудачна, попробуйте еще раз: <a href='registration.php'>Вернуться на страницу регистрации</a>";
+					if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Г€Г§ГўГЁГ­ГЁГІГҐ, Г°ГҐГЈГЁГ±ГІГ°Г Г¶ГЁГї Г­ГҐГіГ¤Г Г·Г­Г , ГЇГ®ГЇГ°Г®ГЎГіГ©ГІГҐ ГҐГ№ГҐ Г°Г Г§: <a href='registration.php'>Г‚ГҐГ°Г­ГіГІГјГ±Гї Г­Г  Г±ГІГ°Г Г­ГЁГ¶Гі Г°ГҐГЈГЁГ±ГІГ°Г Г¶ГЁГЁ</a>";
 				
 				}
 			?>

@@ -17,25 +17,25 @@ if ($myrow) {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-<title>Логування</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Р›РѕРіСѓРІР°РЅРЅСЏ</title>
 </head>
 <body>
 <?php
-if (isset ($log) and $log==0) { if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Логін, який Ви ввели не існує<br><a href='index.php'>Повернутись на головну сторінку</a>";
+if (isset ($log) and $log==0) { if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Р›РѕРіС–РЅ, СЏРєРёР№ Р’Рё РІРІРµР»Рё РЅРµ С–СЃРЅСѓС”<br><a href='index.php'>РџРѕРІРµСЂРЅСѓС‚РёСЃСЊ РЅР° РіРѕР»РѕРІРЅСѓ СЃС‚РѕСЂС–РЅРєСѓ</a>";
 								if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "Login you entered doesn&apos;t exist<br><a href='index.php'>Return to the main page</a>";
-								if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Логин, который Вы ввели не существует<br><a href='index.php'>Вернуться на главную страницу</a>";
+								if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Р›РѕРіРёРЅ, РєРѕС‚РѕСЂС‹Р№ Р’С‹ РІРІРµР»Рё РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚<br><a href='index.php'>Р’РµСЂРЅСѓС‚СЊСЃСЏ РЅР° РіР»Р°РІРЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ</a>";
 								exit();
 							   }
 if ($cook==1) {
-	if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Ви увійшли<br><a href='index.php'>Повернутись на головну сторінку</a>";
+	if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Р’Рё СѓРІС–Р№С€Р»Рё<br><a href='index.php'>РџРѕРІРµСЂРЅСѓС‚РёСЃСЊ РЅР° РіРѕР»РѕРІРЅСѓ СЃС‚РѕСЂС–РЅРєСѓ</a>";
 	if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "You entered<br><a href='index.php'>Return to the main page</a>";
-	if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Вы вошли<br><a href='index.php'>Вернуться на главную страницу</a>";
+	if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Р’С‹ РІРѕС€Р»Рё<br><a href='index.php'>Р’РµСЂРЅСѓС‚СЊСЃСЏ РЅР° РіР»Р°РІРЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ</a>";
 }
 if ($cook==0) {
-	if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo"Хибний пароль, спробуйте ще раз!<br><a href='index.php'>Повернутись на головну сторінку</a>";
+	if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo"РҐРёР±РЅРёР№ РїР°СЂРѕР»СЊ, СЃРїСЂРѕР±СѓР№С‚Рµ С‰Рµ СЂР°Р·!<br><a href='index.php'>РџРѕРІРµСЂРЅСѓС‚РёСЃСЊ РЅР° РіРѕР»РѕРІРЅСѓ СЃС‚РѕСЂС–РЅРєСѓ</a>";
 	if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo"Wrong password, please try again!<br><a href='index.php'>Return to the main page</a>";
-	if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo"Неверный пароль, попробуйте еще раз!<br><a href='index.php'>Вернуться на главную страницу</a>";
+	if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo"РќРµРІРµСЂРЅС‹Р№ РїР°СЂРѕР»СЊ, РїРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰Рµ СЂР°Р·!<br><a href='index.php'>Р’РµСЂРЅСѓС‚СЊСЃСЏ РЅР° РіР»Р°РІРЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ</a>";
 } 
  ?>
 </body>

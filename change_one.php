@@ -1,22 +1,33 @@
-<?php 
-if (!isset($_COOKIE['logged'])) header("Location: index.php");
-if ($_COOKIE['logged']!="in") header("Location: index.php");
+<?php
+if (!isset($_GET['id'])) header("Location: index.php");
+$id=$_GET['id'];
 require_once "blocks/bd.php";
+
+// Checking wright login
+
+if (!isset($_COOKIE['login'])) header("Location: index.php");
+$logina=$_COOKIE['login'];
+$role=mysql_query("SELECT role FROM users WHERE login='$logina'",$db);
+$rowrole=mysql_fetch_array($role);
+if ($rowrole['role']!="admin" && $rowrole['role']!="meneger") header("Location: index.php");
+
 //connecting necessary language
 if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") {
-  $result=mysql_query("SELECT title,header,footer FROM ua WHERE page='create_new'",$db);
+  $result=mysql_query("SELECT title,header,text_main,footer FROM ua WHERE page='about_us'",$db);
   $myrow=mysql_fetch_array($result);
 }
 
 if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") {
-  $result=mysql_query("SELECT title,header,footer FROM en WHERE page='create_new'",$db);
+  $result=mysql_query("SELECT title,header,text_main,footer FROM en WHERE page='about_us'",$db);
   $myrow=mysql_fetch_array($result);
 } 
 
 if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
-  $result=mysql_query("SELECT title,header,footer FROM ru WHERE page='create_new'",$db);
+  $result=mysql_query("SELECT title,header,text_main,footer FROM ru WHERE page='about_us'",$db);
   $myrow=mysql_fetch_array($result);
 }
+$new=mysql_query("SELECT title_new,text_new FROM news WHERE id='$id'",$db);
+$arrnew=mysql_fetch_array($new);
 ?>
 
 
@@ -34,7 +45,10 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
 
 <table border="0" align="center" width="800" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
-    <td class="header" align="right" valign="bottom"><?php echo $myrow['header']; require_once "blocks/flag.php"; ?>
+    <td class="header" align="right" valign="bottom"><?php 
+						echo $myrow['header']; 
+						require_once "blocks/flag.php";
+						?>
     </td>
   </tr>
 
@@ -44,13 +58,16 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
       <table width="100%" border="0" cellpadding="0" cellspacing="0">
         <tr>
           <td width="250" class="lefttd" valign="top">
-          <?php require_once "blocks/script_pages.php"; 
-		  		require_once "blocks/entered.php";
+          <?php require_once "blocks/script_pages.php";
+		   		require_once "blocks/entered.php";
 			 ?>
           </td>
           
           <td align="center">
-          	<form action="insert_new.php" method="post">
+		  	<table width="90%" align="center" cellpadding="0" cellspacing="0" border="0">
+          	<tr>
+            	<td><!--text_main-->
+		<form action="update_one.php" method="post">
                   <table width="450" align="center" border="0" cellpadding="0" cellspacing="0" class="border_reg">
                 	<tr>
                     	<td>
@@ -64,7 +81,8 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
                         </td>
                         
                         <td>
-                        	<input type="text" name="title_new" size="40" maxlength="255" />
+                        	<input type="text" name="title_new" size="40" maxlength="255" value="<?php echo $arrnew[title_new]; ?>"/>
+				<input type="hidden" name="id" value="<?php echo $id; ?>">
                         </td>
                     </tr>
                     <tr>
@@ -79,20 +97,24 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
                         </td>
                         
                         <td>
-                        	<textarea name="text_new" cols="30" rows="10" wrap="virtual"></textarea>
+                        	<textarea name="text_new" cols="30" rows="10" wrap="virtual"><?php echo $arrnew[text_new]; ?></textarea>
                         </td>
                     </tr>
                     
                     <tr>
                     	<td colspan="2" align="center"><p><input type="submit" value="<?php
-								if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Додати новину";
-								if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "Add new";
-								if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Добавить новость";
+								if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Змінити новину";
+								if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "Change new";
+								if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Сменить новость";
 							 ?>" /></p></td>
                         <td></td>
                     </tr>         
                 </table>
              </form>
+		
+		</td>
+            </tr>
+          	</table>
           </td>
         </tr>
       </table>

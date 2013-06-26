@@ -23,7 +23,7 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title><?php echo $myrow['title']; ?></title>
 <link rel="stylesheet" type="text/css" href="style/style.css" />
 </head>
@@ -55,9 +55,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
                     	<td>
                         	<p>
                             	<?php
-									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Прізвище: ";
+									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "РџСЂС–Р·РІРёС‰Рµ: ";
 									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "Surname: ";
-									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Фамилия: ";
+									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Р¤Р°РјРёР»РёСЏ: ";
 								?>
                             </p>
                         </td>
@@ -70,9 +70,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
                     	<td>
                         	<p>
                             	<?php
-									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Ім&apos;я: ";
+									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Р†Рј&apos;СЏ: ";
 									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "Name: ";
-									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Имя: ";
+									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "РРјСЏ: ";
 								?>
                             </p>
                         </td>
@@ -85,9 +85,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
                     	<td>
                         	<p>
                             	<?php
-									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "По-батькові: ";
+									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "РџРѕ-Р±Р°С‚СЊРєРѕРІС–: ";
 									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "Middle name: ";
-									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Отчество: ";
+									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "РћС‚С‡РµСЃС‚РІРѕ: ";
 								?>
                             </p>
                         </td>
@@ -100,9 +100,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
                     	<td>
                         	<p>
                             	<?php
-									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Ваш телефон: ";
+									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Р’Р°С€ С‚РµР»РµС„РѕРЅ: ";
 									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "Your mobile number: ";
-									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Ваш телефон: ";
+									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Р’Р°С€ С‚РµР»РµС„РѕРЅ: ";
 								?>
                             </p>
                         </td>
@@ -115,9 +115,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
                     	<td>
                         	<p>
                             	<?php
-									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Ваш E-mail: ";
+									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Р’Р°С€ E-mail: ";
 									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "Your E-mail: ";
-									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Ваш E-mail: ";
+									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Р’Р°С€ E-mail: ";
 								?>
                             </p>
                         </td>
@@ -130,9 +130,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
                     	<td>
                         	<p>
                             	<?php
-									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Логін: ";
+									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Р›РѕРіС–РЅ: ";
 									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "Login: ";
-									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Логин: ";
+									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Р›РѕРіРёРЅ: ";
 								?>
                             </p>
                         </td>
@@ -145,9 +145,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
                     	<td>
                         	<p>
                             	<?php
-									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Пароль: ";
+									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "РџР°СЂРѕР»СЊ: ";
 									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "Password: ";
-									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Пароль: ";
+									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "РџР°СЂРѕР»СЊ: ";
 								?>
                             </p>
                         </td>
@@ -160,9 +160,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
                     	<td>
                         	<p>
                             	<?php
-									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Повторіть пароль: ";
+									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "РџРѕРІС‚РѕСЂС–С‚СЊ РїР°СЂРѕР»СЊ: ";
 									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "Reenter Password: ";
-									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Повторите пароль: ";
+									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "РџРѕРІС‚РѕСЂРёС‚Рµ РїР°СЂРѕР»СЊ: ";
 								?>
                             </p>
                         </td>
@@ -173,9 +173,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
                     </tr>    
                     <tr>
                     	<td colspan="2" align="center"><p><input type="submit" value="<?php
-									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Зареєструватися";
+									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Р—Р°СЂРµС”СЃС‚СЂСѓРІР°С‚РёСЃСЏ";
 									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "Sign up";
-									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Зарегистрироваться";
+									if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ";
 							?>" /></p></td>
                         <td></td>
                     </tr>         

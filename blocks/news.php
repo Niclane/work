@@ -6,8 +6,8 @@ while($inf_arr=mysql_fetch_array($user_inf)) {
 <tr>
 	<td colspan="2" class="news_title">
 	<h2 class="news_name" align="center">%s</h2>
-    <p class="news_adds"><strong>Дата створення новини:</strong> %s</p>
-    <p class="news_adds"><strong>Автор:</strong> %s</p>
+    <p class="news_adds"><strong>Р”Р°С‚Р° СЃС‚РІРѕСЂРµРЅРЅСЏ РЅРѕРІРёРЅРё:</strong> %s</p>
+    <p class="news_adds"><strong>РђРІС‚РѕСЂ:</strong> %s</p>
 	</td>
 </tr>
 <tr>
@@ -17,7 +17,7 @@ while($inf_arr=mysql_fetch_array($user_inf)) {
 </tr>
 <tr>
 	<td class="news_title">
-	  Телефон: %s
+	  РўРµР»РµС„РѕРЅ: %s
 	</td>
     <td class="news_title">E-mail: %s</td>
 </tr>
@@ -48,8 +48,8 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") printf('<table align="cent
 <tr>
 	<td colspan="2" class="news_title">
 	<h2 class="news_name" align="center">%s</h2>
-    <p class="news_adds"><strong>Дата создания новости:</strong> %s</p>
-    <p class="news_adds"><strong>Автор:</strong> %s</p>
+    <p class="news_adds"><strong>Р”Р°С‚Р° СЃРѕР·РґР°РЅРёСЏ РЅРѕРІРѕСЃС‚Рё:</strong> %s</p>
+    <p class="news_adds"><strong>РђРІС‚РѕСЂ:</strong> %s</p>
 	</td>
 </tr>
 <tr>
@@ -59,7 +59,7 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") printf('<table align="cent
 </tr>
 <tr>
 	<td class="news_title">
-	  Телефон: %s
+	  РўРµР»РµС„РѕРЅ: %s
 	</td>
     <td class="news_title">E-mail: %s</td>
 </tr>

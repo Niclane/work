@@ -2,16 +2,16 @@
 if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo '<form action="log_in.php" method="post">
               <table width="250" cellpadding="0" cellspacing="0"  class="left">
                 <tr>
-                  <td><strong>Логін</strong>:</td>
+                  <td><strong>Р›РѕРіС–РЅ</strong>:</td>
                   <td align="right"><input type="text" name="login" size="17" maxlength="20" /></td>
                 </tr>
                 <tr>
-                  <td><strong>Пароль</strong>:</td>
+                  <td><strong>РџР°СЂРѕР»СЊ</strong>:</td>
                   <td align="right"><input type="password" name="pass" size="17" maxlength="20" /></td>
                 </tr>
                 <tr>
-                  <td><a href="registration.php"><strong>Реєстрація</strong></a></td>
-                  <td align="right"><input type="submit" value="Вхід" /></td>
+                  <td><a href="registration.php"><strong>Р РµС”СЃС‚СЂР°С†С–СЏ</strong></a></td>
+                  <td align="right"><input type="submit" value="Р’С…С–Рґ" /></td>
                 </tr>
               </table>
 </form>';
@@ -35,16 +35,16 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo '<form action="log_in
 if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo '<form action="log_in.php" method="post">
               <table width="250" cellpadding="0" cellspacing="0"  class="left">
                 <tr>
-                  <td><strong>Логин</strong>:</td>
+                  <td><strong>Р›РѕРіРёРЅ</strong>:</td>
                   <td align="right"><input type="text" name="login" size="17" maxlength="20" /></td>
                 </tr>
                 <tr>
-                  <td><strong>Пароль</strong>:</td>
+                  <td><strong>РџР°СЂРѕР»СЊ</strong>:</td>
                   <td align="right"><input type="password" name="pass" size="17" maxlength="20" /></td>
                 </tr>
                 <tr>
-                  <td><a href="registration.php"><strong>Регистрация</strong></a></td>
-                  <td align="right"><input type="submit" value="Вход" /></td>
+                  <td><a href="registration.php"><strong>Р РµРіРёСЃС‚СЂР°С†РёСЏ</strong></a></td>
+                  <td align="right"><input type="submit" value="Р’С…РѕРґ" /></td>
                 </tr>
               </table>
 </form>';
