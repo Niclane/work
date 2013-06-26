@@ -84,7 +84,7 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
           </td>
           
           <td align="center">
-          	<form action="insert_new.php" method="post">
+          	<form action="insert_new.php" method="post" enctype="multipart/form-data">
                   <table width="450" align="center" border="0" cellpadding="0" cellspacing="0" class="border_reg">
                 	<tr>
                     	<td>
@@ -101,6 +101,10 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
                         	<input type="text" name="title_new" size="40" maxlength="255" />
                         </td>
                     </tr>
+		    <tr>
+		    <td><p>Вставити зображення: </p></td>
+		    <td><input type="file" name="filename" /></td>
+		    </tr> 
                     <tr>
                     	<td>
                         	<p>

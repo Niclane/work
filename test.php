@@ -1,9 +1,15 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="style/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
+<form action="script_test.php" method="post" enctype="multipart/form-data">
+      <input type="file" name="filename"><br> 
+      <input type="submit" value="Р—Р°РіСЂСѓР·РёС‚СЊ"><br>
+</form>
+
 
 <?php 
 	$mail="asdfs.a";
@@ -28,8 +34,8 @@ while($myrow=mysql_fetch_array($result)) {
 <tr>
 	<td colspan="2" class="news_title">
 	<p class="news_name">%s</p>
-    <p class="news_adds">Дата створення новини: %s</p>
-    <p class="news_adds">Автор: %s</p>
+    <p class="news_adds">Р”Р°С‚Р° СЃС‚РІРѕСЂРµРЅРЅСЏ РЅРѕРІРёРЅРё: %s</p>
+    <p class="news_adds">РђРІС‚РѕСЂ: %s</p>
 	</td>
 </tr>
 <tr>
@@ -39,7 +45,7 @@ while($myrow=mysql_fetch_array($result)) {
 </tr>
 <tr>
 	<td class="news_title">
-	  Телефон: %s
+	  РўРµР»РµС„РѕРЅ: %s
 	</td>
     <td class="news_title">E-mail: %s</td>
 </tr>
@@ -50,18 +56,18 @@ while($myrow=mysql_fetch_array($result)) {
 <tr>
 	<td colspan="2" class="news_title">
 	<p class="news_name">Name</p>
-    <p class="news_adds">Дата</p>
-    <p class="news_adds">Автор</p>
+    <p class="news_adds">Р”Р°С‚Р°</p>
+    <p class="news_adds">РђРІС‚РѕСЂ</p>
 	</td>
 </tr>
 <tr>
 	<td colspan="2">
-	  <p>Текст</p>
+	  <p>РўРµРєСЃС‚</p>
 	</td>
 </tr>
 <tr>
 	<td class="news_title">
-	  Телефон:
+	  РўРµР»РµС„РѕРЅ:
 	</td>
     <td class="news_title">E-mail:</td>
 </tr>
@@ -73,7 +79,7 @@ while($myrow=mysql_fetch_array($result)) {
 <table width="400" align="center" border="1" cellpadding="0" cellspacing="0" class="border_reg">
                 	<tr>
                     	<td>
-                        	<p>Назва новини:</p>
+                        	<p>РќР°Р·РІР° РЅРѕРІРёРЅРё:</p>
                         </td>
                         
                         <td>
@@ -82,7 +88,7 @@ while($myrow=mysql_fetch_array($result)) {
                     </tr>
                     <tr>
                     	<td>
-                        	<p>Текст новини:</p>
+                        	<p>РўРµРєСЃС‚ РЅРѕРІРёРЅРё:</p>
                         </td>
                         
                         <td>
@@ -91,7 +97,7 @@ while($myrow=mysql_fetch_array($result)) {
                     </tr>
                     
                     <tr>
-                    	<td colspan="2" align="center"><p><input type="submit" value="Додати новину" /></p></td>
+                    	<td colspan="2" align="center"><p><input type="submit" value="Р”РѕРґР°С‚Рё РЅРѕРІРёРЅСѓ" /></p></td>
                         <td></td>
                     </tr>         
   </table>
@@ -101,7 +107,7 @@ while($myrow=mysql_fetch_array($result)) {
 <?php 
  $res = mysql_query("SELECT COUNT(*) FROM news");
  $row = mysql_fetch_row($res);
- $total = $row[0]; // всего записей
+ $total = $row[0]; // РІСЃРµРіРѕ Р·Р°РїРёСЃРµР№
  //echo $total;
 ?>
 
@@ -176,10 +182,10 @@ break;
 
 ?>
 
-<h2 align="center">Користування сайтом</h2>
+<h2 align="center">РљРѕСЂРёСЃС‚СѓРІР°РЅРЅСЏ СЃР°Р№С‚РѕРј</h2>
 <div align="justify"><br>
 </div>
-<p align="justify">Щоб мати можливість додавати новини на сайті, спершу зареєструйтеся. Якщо Ви вже зареєстровані (або тільки що зареєструвалися) можете здійснити вхід використовуючи свій логін та пароль. Після того, як здійснено вхід натисніть на посилання «додати новину», щоб створити нову новину, яка відразу з’явиться на головній сторінці сайту. Щоб змінити мову, натисніть на знак прапору країни, мову якої хочете використовувати.</p>
+<p align="justify">Р©РѕР± РјР°С‚Рё РјРѕР¶Р»РёРІС–СЃС‚СЊ РґРѕРґР°РІР°С‚Рё РЅРѕРІРёРЅРё РЅР° СЃР°Р№С‚С–, СЃРїРµСЂС€Сѓ Р·Р°СЂРµС”СЃС‚СЂСѓР№С‚РµСЃСЏ. РЇРєС‰Рѕ Р’Рё РІР¶Рµ Р·Р°СЂРµС”СЃС‚СЂРѕРІР°РЅС– (Р°Р±Рѕ С‚С–Р»СЊРєРё С‰Рѕ Р·Р°СЂРµС”СЃС‚СЂСѓРІР°Р»РёСЃСЏ) РјРѕР¶РµС‚Рµ Р·РґС–Р№СЃРЅРёС‚Рё РІС…С–Рґ РІРёРєРѕСЂРёСЃС‚РѕРІСѓСЋС‡Рё СЃРІС–Р№ Р»РѕРіС–РЅ С‚Р° РїР°СЂРѕР»СЊ. РџС–СЃР»СЏ С‚РѕРіРѕ, СЏРє Р·РґС–Р№СЃРЅРµРЅРѕ РІС…С–Рґ РЅР°С‚РёСЃРЅС–С‚СЊ РЅР° РїРѕСЃРёР»Р°РЅРЅСЏ В«РґРѕРґР°С‚Рё РЅРѕРІРёРЅСѓВ», С‰РѕР± СЃС‚РІРѕСЂРёС‚Рё РЅРѕРІСѓ РЅРѕРІРёРЅСѓ, СЏРєР° РІС–РґСЂР°Р·Сѓ Р·вЂ™СЏРІРёС‚СЊСЃСЏ РЅР° РіРѕР»РѕРІРЅС–Р№ СЃС‚РѕСЂС–РЅС†С– СЃР°Р№С‚Сѓ. Р©РѕР± Р·РјС–РЅРёС‚Рё РјРѕРІСѓ, РЅР°С‚РёСЃРЅС–С‚СЊ РЅР° Р·РЅР°Рє РїСЂР°РїРѕСЂСѓ РєСЂР°С—РЅРё, РјРѕРІСѓ СЏРєРѕС— С…РѕС‡РµС‚Рµ РІРёРєРѕСЂРёСЃС‚РѕРІСѓРІР°С‚Рё.</p>
 
 <?php 
 									if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua")  
