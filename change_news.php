@@ -6,24 +6,49 @@ if (!isset($_COOKIE['login']) || $_COOKIE['login']=="")
 $logina=$_COOKIE['login'];
 //connecting necessary language
 if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") {
-  $result=mysql_query("SELECT header,footer FROM ua WHERE page='about_us'",$db);
-  $myrow=mysql_fetch_array($result);
+  
+  // Selecting header for ua
+  $head=mysql_query("SELECT ua FROM headers",$db);
+  $arrHead=mysql_fetch_array($head);
+  $header=$arrHead[ua];
+  
+  // Selecting footer for ua
+  $foot=mysql_query("SELECT ua FROM footers",$db);
+  $arrFoot=mysql_fetch_array($foot);
+  $footer=$arrFoot[ua];
+  
   $redacting="Тут редагуються новини";
   $change="редагувати";
   $delete="видалити";
 }
 
 if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") {
-  $result=mysql_query("SELECT header,footer FROM en WHERE page='about_us'",$db);
-  $myrow=mysql_fetch_array($result);
+  // Selecting header for en
+  $head=mysql_query("SELECT en FROM headers",$db);
+  $arrHead=mysql_fetch_array($head);
+  $header=$arrHead[en];
+  
+  // Selecting footer for en
+  $foot=mysql_query("SELECT en FROM footers",$db);
+  $arrFoot=mysql_fetch_array($foot);
+  $footer=$arrFoot[en];
+  
   $redacting="Here the news are changing";
   $change="change";
   $delete="delete";
 } 
 
 if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
-  $result=mysql_query("SELECT header,footer FROM ru WHERE page='about_us'",$db);
-  $myrow=mysql_fetch_array($result);
+  // Selecting header for ru
+  $head=mysql_query("SELECT ru FROM headers",$db);
+  $arrHead=mysql_fetch_array($head);
+  $header=$arrHead[ru];
+  
+  // Selecting footer for ru
+  $foot=mysql_query("SELECT ru FROM footers",$db);
+  $arrFoot=mysql_fetch_array($foot);
+  $footer=$arrFoot[ru];
+  
   $redacting="Здесь редактируются новости";
   $change="редактировать";
   $delete="удалить";
@@ -68,10 +93,11 @@ else {
 
 <table border="0" align="center" width="800" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
-    <td class="header" align="right" valign="bottom"><?php 
-						echo $myrow['header']; 
-						require_once "blocks/flag.php";
-						?>
+    <td class="header" align="right" valign="bottom"> 
+    <a href="index.php"><img src="img/<?php echo $header; ?>"/></a>
+	<?php
+	  require_once "blocks/flag.php";
+	?>
     </td>
   </tr>
 
@@ -100,7 +126,7 @@ else {
   </tr>
   
   <tr>
-    <td><?php echo $myrow['footer']; ?></td>
+    <td><img id="footer" src="img/<?php echo $footer; ?>" /></td>
   </tr>
 </table>
 

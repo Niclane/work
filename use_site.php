@@ -2,18 +2,48 @@
 require_once "blocks/bd.php";
 //connecting necessary language
 if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") {
-  $result=mysql_query("SELECT title,header,text_main,footer FROM ua WHERE page='use_site'",$db);
+  $result=mysql_query("SELECT title,text_main FROM ua WHERE page='use_site'",$db);
   $myrow=mysql_fetch_array($result);
+  
+  // Selecting header for ua
+  $head=mysql_query("SELECT ua FROM headers",$db);
+  $arrHead=mysql_fetch_array($head);
+  $header=$arrHead[ua];
+  
+  // Selecting footer for ua
+  $foot=mysql_query("SELECT ua FROM footers",$db);
+  $arrFoot=mysql_fetch_array($foot);
+  $footer=$arrFoot[ua];
 }
 
 if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") {
-  $result=mysql_query("SELECT title,header,text_main,footer FROM en WHERE page='use_site'",$db);
+  $result=mysql_query("SELECT title,text_main FROM en WHERE page='use_site'",$db);
   $myrow=mysql_fetch_array($result);
+  
+  // Selecting header for en
+  $head=mysql_query("SELECT en FROM headers",$db);
+  $arrHead=mysql_fetch_array($head);
+  $header=$arrHead[en];
+
+  // Selecting footer for en
+  $foot=mysql_query("SELECT en FROM footers",$db);
+  $arrFoot=mysql_fetch_array($foot);
+  $footer=$arrFoot[en];
 } 
 
 if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
-  $result=mysql_query("SELECT title,header,text_main,footer FROM ru WHERE page='use_site'",$db);
+  $result=mysql_query("SELECT title,text_main FROM ru WHERE page='use_site'",$db);
   $myrow=mysql_fetch_array($result);
+  
+  // Selecting header for ru
+  $head=mysql_query("SELECT ru FROM headers",$db);
+  $arrHead=mysql_fetch_array($head);
+  $header=$arrHead[ru];
+  
+  // Selecting footer for ru
+  $foot=mysql_query("SELECT ru FROM footers",$db);
+  $arrFoot=mysql_fetch_array($foot);
+  $footer=$arrFoot[ru];
 }
 
 ?>
@@ -33,7 +63,9 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
 
 <table border="0" align="center" width="800" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
-    <td class="header" align="right" valign="bottom"><?php echo $myrow['header']; require_once "blocks/flag.php"; ?>
+    <td class="header" align="right" valign="bottom">
+    <a href="index.php"><img src="img/<?php echo $header; ?>"/></a>
+    <?php require_once "blocks/flag.php"; ?>
     </td>
   </tr>
 
@@ -62,7 +94,7 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
   </tr>
   
   <tr>
-    <td><?php echo $myrow['footer']; ?></td>
+    <td><img id="footer" src="img/<?php echo $footer; ?>" /></td>
   </tr>
 </table>
 
