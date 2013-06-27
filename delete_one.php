@@ -8,5 +8,10 @@
     unlink($row['user_img']);
   }
   mysql_query("DELETE FROM news WHERE id='$id'",$db);
-  header("Location: ".$_SERVER['HTTP_REFERER']);
+  if ($_SERVER['HTTP_REFERER']=="http://".$_SERVER['HTTP_HOST']."/change_news.php") {
+    header("Location: ".$_SERVER['HTTP_REFERER']);
+  }
+  else {
+    header("Location: index.php");
+  }
 ?>

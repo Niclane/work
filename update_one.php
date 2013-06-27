@@ -50,5 +50,5 @@
   }
   
   mysql_query("UPDATE news SET title_new='$title_new', text_new='$text_new' WHERE id='$id'",$db);
-  header("Location: change_news.php");
+  header("Location: big_new.php?id=".$id);
 ?>

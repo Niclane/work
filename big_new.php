@@ -34,6 +34,29 @@ if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") {
   $arrFoot=mysql_fetch_array($foot);
   $footer=$arrFoot['ua'];
   
+  // Making a change/delete panel
+  if (isset($_COOKIE['logged']) and $_COOKIE['logged']=="in") {
+    $hello=$_COOKIE['login'];
+    $role=mysql_query("SELECT role FROM users WHERE login='$hello'",$db);
+    $rowrole=mysql_fetch_array($role);
+      if ($rowrole['role']=='admin') {
+	$addToText='<tr><td class="news_title" colspan="2" align="right">
+	  <a href="change_one.php?id='.$id.'">Редагувати</a> / <a href="delete_one.php?id='.$id.'">Видалити</a>
+	</td></tr>';
+      }
+      elseif ($rowrole['role']=='meneger') {
+	$addToText='<tr><td class="news_title" colspan="2" align="right">
+	  <a href="change_one.php?id='.$id.'">Редагувати</a>
+	</td></tr>';
+      }
+      else {
+	$addToText="";
+      }
+      
+  } else {
+    $addToText="";
+  }
+  
   // Making form of a new in $text_main
   $text_main='<table align="center" class="news" border="1" cellpadding="0" cellspacing="0">
 <tr>
@@ -55,6 +78,7 @@ if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") {
 	</td>
     <td class="news_title">E-mail: '.$inf_arr["mail"].'</td>
 </tr>
+'.$addToText.'
 </table>';
 }
 
