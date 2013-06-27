@@ -52,7 +52,7 @@ if ($_FILES["filename"]["name"]!="") {
     || ($_FILES["filename"]["type"] == "image/png") 
     || ($_FILES["filename"]["type"] == "image/pjpeg"))
    {
-    print_r($_FILES);
+    
     $format=end(explode(".",$_FILES['filename']['name'])); // Format of the file
     // Checking if the file is downloaded
     if(is_uploaded_file($_FILES["filename"]["tmp_name"]))
@@ -67,7 +67,19 @@ if ($_FILES["filename"]["name"]!="") {
 	 echo "Вибачте, але ваша картинка не додалась!<a href='index.php'>Повернутися на головну сторінку</a>";
       else move_uploaded_file($_FILES["filename"]["tmp_name"], $imAdres);
       
+      // Checking necessary size else delete
+      $size = getimagesize("$imAdres");
+      if ($size[0]>450 || $size[1]>450) {
+	unlink("$imAdres");
+	echo "wrong image size <a href='create_new.php'>Return</a>";
+	//deleting from bd
+	mysql_query("DELETE FROM news WHERE id='$iD'",$db);
+	exit;
+      }
+      else {
+      
       mysql_query("UPDATE news SET user_img='$imAdres' WHERE id='$iD'");
+      }
     } else {
        echo("Ошибка загрузки файла");
 	    }

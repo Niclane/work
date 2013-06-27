@@ -8,7 +8,7 @@ while($inf_arr=mysql_fetch_array($user_inf)) {
 		$size=getimagesize($inf_arr['user_img']);
 		if ($size[0]>450 || $size[1]>450)
 		$img="<img height='400' width='500' align='center' src=".$inf_arr['user_img'].">";
-		else $img="<img height='400' width='400' align='center' src=".$inf_arr['user_img'].">";
+		else $img="<img align='center' src=".$inf_arr['user_img'].">";
 	}
 	else $img="";
 	

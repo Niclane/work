@@ -10,12 +10,12 @@ if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") {
   // Selecting header for ua
   $head=mysql_query("SELECT ua FROM headers",$db);
   $arrHead=mysql_fetch_array($head);
-  $header=$arrHead[ua];
+  $header=$arrHead['ua'];
   
   // Selecting footer for ua
   $foot=mysql_query("SELECT ua FROM footers",$db);
   $arrFoot=mysql_fetch_array($foot);
-  $footer=$arrFoot[ua];
+  $footer=$arrFoot['ua'];
   
   $redacting="Тут редагуються новини";
   $change="редагувати";
@@ -26,12 +26,12 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") {
   // Selecting header for en
   $head=mysql_query("SELECT en FROM headers",$db);
   $arrHead=mysql_fetch_array($head);
-  $header=$arrHead[en];
+  $header=$arrHead['en'];
   
   // Selecting footer for en
   $foot=mysql_query("SELECT en FROM footers",$db);
   $arrFoot=mysql_fetch_array($foot);
-  $footer=$arrFoot[en];
+  $footer=$arrFoot['en'];
   
   $redacting="Here the news are changing";
   $change="change";
@@ -42,12 +42,12 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
   // Selecting header for ru
   $head=mysql_query("SELECT ru FROM headers",$db);
   $arrHead=mysql_fetch_array($head);
-  $header=$arrHead[ru];
+  $header=$arrHead['ru'];
   
   // Selecting footer for ru
   $foot=mysql_query("SELECT ru FROM footers",$db);
   $arrFoot=mysql_fetch_array($foot);
-  $footer=$arrFoot[ru];
+  $footer=$arrFoot['ru'];
   
   $redacting="Здесь редактируются новости";
   $change="редактировать";
@@ -61,14 +61,14 @@ if ($rowrole['role']=="admin") {
   $adm=mysql_query("SELECT title_new,id FROM news ORDER BY id DESC",$db);
   $show="";
   while ($arradm=mysql_fetch_array($adm)) {
-    $show=$show."<tr><td>".$arradm['title_new']."</td><td align='right'><a href=\"change_one.php?id=".$arradm[id]."\"> ".$change."</a> \ <a href=\"delete_one.php?id=".$arradm[id]."\">".$delete."</a></td></tr>";
+    $show=$show."<tr><td>".$arradm['title_new']."</td><td align='right'><a href=\"change_one.php?id=".$arradm['id']."\"> ".$change."</a> \ <a href=\"delete_one.php?id=".$arradm['id']."\">".$delete."</a></td></tr>";
   }
 }
 elseif($rowrole['role']=="meneger") {
   $meneg=mysql_query("SELECT title_new,id FROM news ORDER BY id DESC",$db);
   $show="";
   while ($arrmeneg=mysql_fetch_array($meneg)) {
-    $show=$show.$arrmeneg['title_new']."<a href=\"change_one.php?id=".$arrmeneg[id]."\"> ".$change."</a><br>";
+    $show=$show.$arrmeneg['title_new']."<a href=\"change_one.php?id=".$arrmeneg['id']."\"> ".$change."</a><br>";
   }
 }
 else {

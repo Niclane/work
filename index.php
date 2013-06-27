@@ -9,12 +9,12 @@
     // Selecting header for ua
     $head=mysql_query("SELECT ua FROM headers",$db);
     $arrHead=mysql_fetch_array($head);
-    $header=$arrHead[ua];
+    $header=$arrHead['ua'];
     
     // Selecting footer for ua
     $foot=mysql_query("SELECT ua FROM footers",$db);
     $arrFoot=mysql_fetch_array($foot);
-    $footer=$arrFoot[ua];
+    $footer=$arrFoot['ua'];
   }
   
   if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") {
@@ -24,12 +24,12 @@
     // Selecting header for en
     $head=mysql_query("SELECT en FROM headers",$db);
     $arrHead=mysql_fetch_array($head);
-    $header=$arrHead[en];
+    $header=$arrHead['en'];
     
     // Selecting footer for en
     $foot=mysql_query("SELECT en FROM footers",$db);
     $arrFoot=mysql_fetch_array($foot);
-    $footer=$arrFoot[en];
+    $footer=$arrFoot['en'];
   } 
   
   if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
@@ -39,12 +39,12 @@
     // Selecting header for ru
     $head=mysql_query("SELECT ru FROM headers",$db);
     $arrHead=mysql_fetch_array($head);
-    $header=$arrHead[ru];
+    $header=$arrHead['ru'];
     
     // Selecting footer for ru
     $foot=mysql_query("SELECT ru FROM footers",$db);
     $arrFoot=mysql_fetch_array($foot);
-    $footer=$arrFoot[ru];
+    $footer=$arrFoot['ru'];
   }
   
   // Getting a variable that contain number of page.
