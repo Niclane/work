@@ -1,9 +1,108 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="style/style.css" rel="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title><?php echo $myrow['title']; ?></title>
+<link rel="stylesheet" type="text/css" href="style/style.css" />
 </head>
 <body>
+
+<?php
+function work_substr($text, $start, $length = NULL) {
+  global $multibyte;
+  if ($multibyte == 1) {
+    return $length === NULL ? mb_substr($text, $start) : mb_substr($text, $start, $length);
+  }
+  else {
+    $strlen = strlen($text);
+    // Find the starting byte offset.
+    $bytes = 0;
+    if ($start > 0) {
+      // Count all the continuation bytes from the start until we have found
+      // $start characters or the end of the string.
+      $bytes = -1;
+      $chars = -1;
+      while ($bytes < $strlen - 1 && $chars < $start) {
+        $bytes++;
+        $c = ord($text[$bytes]);
+        if ($c < 0x80 || $c >= 0xC0) {
+          $chars++;
+        }
+      }
+    }
+    elseif ($start < 0) {
+      // Count all the continuation bytes from the end until we have found
+      // abs($start) characters.
+      $start = abs($start);
+      $bytes = $strlen;
+      $chars = 0;
+      while ($bytes > 0 && $chars < $start) {
+        $bytes--;
+        $c = ord($text[$bytes]);
+        if ($c < 0x80 || $c >= 0xC0) {
+          $chars++;
+        }
+      }
+    }
+    $istart = $bytes;
+
+    // Find the ending byte offset.
+    if ($length === NULL) {
+      $iend = $strlen;
+    }
+    elseif ($length > 0) {
+      // Count all the continuation bytes from the starting index until we have
+      // found $length characters or reached the end of the string, then
+      // backtrace one byte.
+      $iend = $istart - 1;
+      $chars = -1;
+      $last_real = FALSE;
+      while ($iend < $strlen - 1 && $chars < $length) {
+        $iend++;
+        $c = ord($text[$iend]);
+        $last_real = FALSE;
+        if ($c < 0x80 || $c >= 0xC0) {
+          $chars++;
+          $last_real = TRUE;
+        }
+      }
+      // Backtrace one byte if the last character we found was a real character
+      // and we don't need it.
+      if ($last_real && $chars >= $length) {
+        $iend--;
+      }
+    }
+    elseif ($length < 0) {
+      // Count all the continuation bytes from the end until we have found
+      // abs($start) characters, then backtrace one byte.
+      $length = abs($length);
+      $iend = $strlen;
+      $chars = 0;
+      while ($iend > 0 && $chars < $length) {
+        $iend--;
+        $c = ord($text[$iend]);
+        if ($c < 0x80 || $c >= 0xC0) {
+          $chars++;
+        }
+      }
+      // Backtrace one byte if we are not at the beginning of the string.
+      if ($iend > 0) {
+        $iend--;
+      }
+    }
+    else {
+      // $length == 0, return an empty string.
+      return '';
+    }
+
+    return substr($text, $istart, max(0, $iend - $istart + 1));
+  }
+}
+
+echo iconv_strlen("має4","UTF-8")."<br>";
+$string = mb_substr("Російська", 0, 5, "UTF-8")."...";
+echo $string."<br>";
+?>
 
 <form action="script_test.php" method="post" enctype="multipart/form-data">
       <input type="file" name="filename"><br> 

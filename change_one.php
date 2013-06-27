@@ -56,7 +56,7 @@ $arrnew=mysql_fetch_array($new);
 
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -92,24 +92,38 @@ $arrnew=mysql_fetch_array($new);
 		  	<table width="90%" align="center" cellpadding="0" cellspacing="0" border="0">
           	<tr>
             	<td><!--text_main-->
-		<form action="update_one.php" method="post">
+		<form action="update_one.php" method="post" enctype="multipart/form-data">
                   <table width="450" align="center" border="0" cellpadding="0" cellspacing="0" class="border_reg">
                 	<tr>
                     	<td>
-                        	<p>
-                             <?php
+                        	<p><?php
 								if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Назва новини: ";
 								if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "Title of new: ";
 								if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Назва новости: ";
-							 ?>
-                            </p>
+							 ?></p>
                         </td>
                         
                         <td>
-                        	<input type="text" name="title_new" size="40" maxlength="255" value="<?php echo $arrnew[title_new]; ?>"/>
+                        	<input type="text" name="title_new" size="40" maxlength="255" value="<?php echo $arrnew['title_new']; ?>"/>
 				<input type="hidden" name="id" value="<?php echo $id; ?>">
                         </td>
                     </tr>
+			
+			<!-- Change image-->
+			<tr>
+                    	<td>
+                        	<p><?php
+								if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Змінити/додати зображення: ";
+								if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "Change/add image: ";
+								if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "Сменить/добавить изображение: ";
+							 ?></p>
+                        </td>
+                        
+                        <td>
+                          <input type="file" name="filename" />
+                        </td>
+                    </tr>
+			
                     <tr>
                     	<td>
                         	<p>
@@ -122,7 +136,7 @@ $arrnew=mysql_fetch_array($new);
                         </td>
                         
                         <td>
-                        	<textarea name="text_new" cols="30" rows="10" wrap="virtual"><?php echo $arrnew[text_new]; ?></textarea>
+                        	<textarea name="text_new" cols="30" rows="10" wrap="virtual"><?php echo $arrnew['text_new']; ?></textarea>
                         </td>
                     </tr>
                     

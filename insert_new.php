@@ -53,7 +53,9 @@ if ($_FILES["filename"]["name"]!="") {
     || ($_FILES["filename"]["type"] == "image/pjpeg"))
    {
     
-    $format=end(explode(".",$_FILES['filename']['name'])); // Format of the file
+    $exp=explode(".",$_FILES['filename']['name']);
+    $format=end($exp); // Format of the file
+    
     // Checking if the file is downloaded
     if(is_uploaded_file($_FILES["filename"]["tmp_name"]))
     {
@@ -61,7 +63,7 @@ if ($_FILES["filename"]["name"]!="") {
       // If it downloaded, we put it into uploads/id<id of the new>.<format>
       $idIm=mysql_query("SELECT id FROM news ORDER BY id DESC",$db);
       $arrIdIm=mysql_fetch_array($idIm);
-      $iD=$arrIdIm[id];
+      $iD=$arrIdIm['id'];
       $imAdres="uploads/".$iD.".".$format;
       if (!move_uploaded_file($_FILES["filename"]["tmp_name"], $imAdres))
 	 echo "Вибачте, але ваша картинка не додалась!<a href='index.php'>Повернутися на головну сторінку</a>";

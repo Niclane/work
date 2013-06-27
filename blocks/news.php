@@ -1,6 +1,6 @@
 <?php 
 $for_limit=$page*3-3;
-$user_inf=mysql_query("SELECT title_new,date,author,user_img,text_new,mob,mail FROM news ORDER BY id DESC LIMIT $for_limit,3",$db);
+$user_inf=mysql_query("SELECT id,title_new,date,author,user_img,text_new,mob,mail FROM news ORDER BY id DESC LIMIT $for_limit,3",$db);
 while($inf_arr=mysql_fetch_array($user_inf)) {
 	
 	// Making image
@@ -11,6 +11,13 @@ while($inf_arr=mysql_fetch_array($user_inf)) {
 		else $img="<img align='center' src=".$inf_arr['user_img'].">";
 	}
 	else $img="";
+	
+	
+	// Finding if text have 150 chars
+	$text=$inf_arr['text_new'];
+	if (iconv_strlen($text, "UTF-8")>150) {
+		$text=mb_substr($text, 0, 150, "UTF-8")."...";
+	}
 	
 	if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") printf('<table align="center" class="news" border="1" cellpadding="0" cellspacing="0">
 <tr>
@@ -32,7 +39,12 @@ while($inf_arr=mysql_fetch_array($user_inf)) {
 	</td>
     <td class="news_title">E-mail: %s</td>
 </tr>
-</table>',$inf_arr['title_new'],$inf_arr['date'],$inf_arr['author'],$img,$inf_arr['text_new'],$inf_arr['mob'],$inf_arr['mail']);
+<tr align="right">
+	<td class="news_title" colspan="2">
+	  <a href="big_new.php?id=%s">Читати повністю</a>
+	</td>
+</tr>
+</table>',$inf_arr['title_new'],$inf_arr['date'],$inf_arr['author'],$img,$text,$inf_arr['mob'],$inf_arr['mail'],$inf_arr['id']);
 
 if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") printf('<table align="center" class="news" border="1" cellpadding="0" cellspacing="0">
 <tr>
@@ -54,7 +66,12 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") printf('<table align="cent
 	</td>
     <td class="news_title">E-mail: %s</td>
 </tr>
-</table>',$inf_arr['title_new'],$inf_arr['date'],$inf_arr['author'],$img,$inf_arr['text_new'],$inf_arr['mob'],$inf_arr['mail']);
+<tr align="right">
+	<td class="news_title" colspan="2">
+	  <a href="big_new.php?id=%s">Read more</a>
+	</td>
+</tr>
+</table>',$inf_arr['title_new'],$inf_arr['date'],$inf_arr['author'],$img,$text,$inf_arr['mob'],$inf_arr['mail'],$inf_arr['id']);
 
 if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") printf('<table align="center" class="news" border="1" cellpadding="0" cellspacing="0">
 <tr>
@@ -76,6 +93,11 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") printf('<table align="cent
 	</td>
     <td class="news_title">E-mail: %s</td>
 </tr>
-</table>',$inf_arr['title_new'],$inf_arr['date'],$inf_arr['author'],$img,$inf_arr['text_new'],$inf_arr['mob'],$inf_arr['mail']);
+<tr align="right">
+	<td class="news_title" colspan="2">
+	  <a href="big_new.php?id=%s">Читать полностью</a>
+	</td>
+</tr>
+</table>',$inf_arr['title_new'],$inf_arr['date'],$inf_arr['author'],$img,$text,$inf_arr['mob'],$inf_arr['mail'],$inf_arr['id']);
 }	  
 ?>
