@@ -5,8 +5,16 @@ if (!isset($_GET['id'])) {
   exit();
 }
 $id=$_GET['id'];
-$user_inf=mysql_query("SELECT title_new,date,author,user_img,text_new,mob,mail FROM news WHERE id='$id'",$db);
+$user_inf=mysql_query("SELECT title_new,date,author,user_img,text_new FROM news WHERE id='$id'",$db);
 $inf_arr=mysql_fetch_array($user_inf);
+
+$logId=$inf_arr['author'];
+$logd=mysql_query("SELECT surname,name,lastname,mob,mail,login FROM users WHERE id='$logId'",$db);
+$log=mysql_fetch_array($logd);
+$inf_arr['author']=$log['surname']." ".$log['name']." ".$log['lastname']." ".$log['login'];
+$inf_arr['mob']=$log['mob'];
+$inf_arr['mail']=$log['mail'];
+
 
 // Making image
   if ($inf_arr['user_img']!="") {

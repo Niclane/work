@@ -31,13 +31,11 @@ exit();
 
 require_once "blocks/bd.php";
 $login=$_COOKIE['login'];
-$get_names=mysql_query("SELECT surname,name,lastname,mob,mail FROM users WHERE login='$login'",$db);
+$get_names=mysql_query("SELECT id FROM users WHERE login='$login'",$db);
 $other_names=mysql_fetch_array($get_names);
-$author=$other_names['surname']." ".$other_names['name']." ".$other_names['lastname']." "."($login)";
+$logId=$other_names['id'];
 $add_date=date("Y-m-d");
-$mob=$other_names['mob'];
-$mail=$other_names['mail'];
-$result=mysql_query("INSERT INTO news (title_new,text_new,author,date,mob,mail) VALUES ('$title_new','$text_new','$author','$add_date','$mob','$mail')");
+$result=mysql_query("INSERT INTO news (title_new,text_new,date,author) VALUES ('$title_new','$text_new','$add_date','$logId')");
 
 // Adding image
 if ($_FILES["filename"]["name"]!="") {

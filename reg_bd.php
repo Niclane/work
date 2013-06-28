@@ -152,6 +152,7 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
 					 exit();
 					}
 					$pass=htmlspecialchars($pass1);
+					$pass=md5($pass);
 				}	
 				
 				//connecting to bd
@@ -164,7 +165,7 @@ if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") {
 							if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="ru") echo "<p style='color:#FF0000; font-size:18px;'>Извините, но пользователь с таким логином уже существует, вернитесь на предыдущую страницу и заполните все поля</p><input name='back' type='button' value='Вернуться на предыдущую страницу' onclick='javascript:self.back();'>";
 					 exit();}
 				}
-				$insert=mysql_query("INSERT INTO users (surname,name,lastname,mob,mail,login,pass) VALUES ('$surname','$name','$lastname','$mob','$mail','$login','$pass')");
+				$insert=mysql_query("INSERT INTO users (surname,name,lastname,mob,mail,login,pass,role) VALUES ('$surname','$name','$lastname','$mob','$mail','$login','$pass','user')");
 				if ($insert){
 						if (!isset($_COOKIE['lan']) or $_COOKIE['lan']=="ua") echo "Ви успішно зареєструвалися<br><a align='center' href='index.php'>Повернутися на головну сторінку</a>";
 						if (isset($_COOKIE['lan']) and $_COOKIE['lan']=="en") echo "You have successfully registered<br><a align='center' href='index.php'>Back to main page</a>";

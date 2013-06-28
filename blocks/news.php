@@ -1,7 +1,14 @@
 <?php 
 $for_limit=$page*3-3;
-$user_inf=mysql_query("SELECT id,title_new,date,author,user_img,text_new,mob,mail FROM news ORDER BY id DESC LIMIT $for_limit,3",$db);
+$user_inf=mysql_query("SELECT id,title_new,date,author,user_img,text_new FROM news ORDER BY id DESC LIMIT $for_limit,3",$db);
 while($inf_arr=mysql_fetch_array($user_inf)) {
+	$logId=$inf_arr['author'];
+	$logd=mysql_query("SELECT surname,name,lastname,mob,mail,login FROM users WHERE id='$logId'",$db);
+	$log=mysql_fetch_array($logd);
+	$inf_arr['author']=$log['surname']." ".$log['name']." ".$log['lastname']." ".$log['login'];
+	$inf_arr['mob']=$log['mob'];
+	$inf_arr['mail']=$log['mail'];
+	
 	
 	// Making image
 	if ($inf_arr['user_img']!="") {

@@ -5,7 +5,7 @@ $pass=$_POST['pass']; $pass=htmlspecialchars($pass);
 $result=mysql_query("SELECT login,pass,surname,name,lastname FROM users WHERE login='$login'",$db);
 $myrow=mysql_fetch_array($result);
 if ($myrow) {
-	if ($pass==$myrow['pass']) {
+	if (md5($pass)==$myrow['pass']) {
 	SetCookie("logged","in",mktime(0,0,0,01,25,2025));
 	SetCookie("login","$login",mktime(0,0,0,01,25,2025));
 	$cook=1;
