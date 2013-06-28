@@ -47,8 +47,7 @@ if ($_FILES["filename"]["name"]!="") {
    
    if (($_FILES["filename"]["type"] == "image/gif") 
     || ($_FILES["filename"]["type"] == "image/jpeg") 
-    || ($_FILES["filename"]["type"] == "image/png") 
-    || ($_FILES["filename"]["type"] == "image/pjpeg"))
+    || ($_FILES["filename"]["type"] == "image/png"))
    {
     
     $exp=explode(".",$_FILES['filename']['name']);

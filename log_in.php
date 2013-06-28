@@ -8,6 +8,8 @@ if ($myrow) {
 	if (md5($pass)==$myrow['pass']) {
 	SetCookie("logged","in",mktime(0,0,0,01,25,2025));
 	SetCookie("login","$login",mktime(0,0,0,01,25,2025));
+	$time_logged=time();
+	mysql_query("UPDATE users SET time_logged='$time_logged' WHERE login='$login'",$db);
 	$cook=1;
 	} else $cook=0;
 } else $log=0;
